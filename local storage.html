@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local storage</title>
+    <style>
+        .dark {
+            background-color: black; color: white;
+        }
+    </style>
+</head>
+<body>
+    <h3>Local storage</h3>
+
+    <!-- Local storage -->
+    <!-- <script>
+        localStorage.setItem('name' , 'Ali')
+        localStorage.setItem('class' , '8')
+
+        let username = localStorage.getItem( 'name' )
+        document.write( username )
+
+        localStorage.clear()
+    </script> -->
+
+    <button id="day">Day mode</button>
+    <button id="night">night mode</button>
+    <!-- dark mode -->
+     <script>
+        let day = document.getElementById( 'day' )
+        let night = document.getElementById( 'night' )
+
+        if( localStorage.getItem('theme') == "night" ){
+            document.body.classList.add('dark')
+        }
+
+        day.addEventListener( 'click' , function () {
+            document.body.classList.remove('dark')
+            localStorage.removeItem('theme')
+        } )
+
+        night.addEventListener( 'click' , function () {
+            document.body.classList.add('dark')
+            localStorage.setItem( 'theme' , "night" )
+        } )
+     </script>
+
+     <!-- 10/10/26 -->
+      <script>
+        let name = "darwazy wala bhai"
+        localStorage.setItem( 'name' , name )
+
+        let student = { name : 'ali bhai' , module : 'pwd' }
+        localStorage.setItem( 'studentInfo' , JSON.stringify( student ) )
+
+        let ali = JSON.parse( localStorage.getItem( 'studentInfo' ) )
+        console.log( ali )
+        
+      </script>
+</body>
+</html>

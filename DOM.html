@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h3>DOM</h3>
+    <p id="para">Helo</p>
+    <p id="para2">Helo</p>
+
+    <p class="para">classname 1</p>
+    <p class="para">classname 2</p>
+
+    <!-- <button>Click me</button> -->
+
+    <script>
+        // selector
+        // 1. id -> getElementById( "" )
+        // 2. class -> getElementsByClassName( "" )
+        // 3. Tag -> getElementsByTagName("")
+        // 4. Select (id class tag) -> querySelector("")
+        // 5. Select (id class tag) in array -> querySelectorAll("")
+
+        // 1 time
+        document.getElementById("para").innerText = "helo world"
+        document.getElementById("para").innerText = "helo world"
+
+        // mutiple time
+        let p = document.getElementById('para')
+        let p2 = document.getElementById('para2')
+        p.innerText = "<b> multiple time </b>"
+        p2.innerHTML = "<b> multiple time </b>"
+
+        // class selector
+        let classSelector = document.getElementsByClassName("para")
+        classSelector[0].innerHTML = "bau"
+
+        // tag selector
+        let tagName = document.getElementsByTagName( "p" )
+        // console.log(tagName);
+
+        // query selector
+        document.querySelector("p").innerHTML = "this is query seelctor"
+
+        console.log(document.querySelectorAll("p"));
+        
+
+
+        
+        
+
+    </script>
+</body>
+</html>

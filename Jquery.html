@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js" integrity="sha512-8LENNbXmzI/Gbj+OwXmqR6V4QaUAw0/porPzy1+dQoJqC0JPHedWoe0DDOTL2uHA5XXJyIsPtiMHH86pVlay6A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .box { width: 50px; height: 50px; background-color: red; }
+    </style>
+</head>
+<body>
+    <h3>Jquery</h3>
+
+    <p id="para">This is paragraph</p>
+    <p class="para">This is paragraph</p>
+    <div id="box"></div>
+
+    <h3>Events</h3>
+    <button id="btn">Click me</button>
+    <div id="box2"></div>
+
+    <h3>Animation</h3>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+    <button id="fade-in">Fade in</button>
+    <button id="fade-out">Fade out</button>
+    <button id="slide-up">slide up</button>
+    <button id="slide-down">slide down</button>
+    <button id="slide-toggle">slide toggle</button>
+
+    <div id="animation-box" class="box"></div>
+
+    <script>
+        // text manipulation
+        $('#para').text('this is by JQuery')
+        $('.para').html('<b> this is by JQuery </b>')
+
+        // css
+        $('#para').css('color' , 'blue')
+        $('.para').css({
+            "color" : "red" ,
+            "background-color" : "yellow"
+        })
+
+        // css classes
+        $('#box').addClass('box')
+        // $('#box').removeClass('box')
+
+        // events
+        $('#btn').click( function (){
+            $('#box2').toggleClass('box')
+            $(this).css('color', 'blue')
+        } )
+
+        // animation
+        $('#hide').click( function () { $('#animation-box').hide() })
+        $('#show').click( function () { $('#animation-box').show() })
+        $('#toggle').click( function () { $('#animation-box').toggle() })
+        $('#fade-in').click( function () { $('#animation-box').fadeIn() })
+        $('#fade-out').click( function () { $('#animation-box').fadeOut() })
+        $('#slide-up').click( function () { $('#animation-box').slideUp() })
+        $('#slide-down').click( function () { $('#animation-box').slideDown() })
+        $('#slide-toggle').click( function () { $('#animation-box').slideToggle() })
+
+    </script>
+
+</body>
+</html>

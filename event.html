@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+        .box {
+            height: 400px;
+            width: 400px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Events</h3>
+
+    <div class="box"></div>
+
+    <form action="" id="form">
+        <input id="input" type="text" placeholder="Enter your name">
+        <br><br>
+        <input type="submit" value="click">
+    </form>
+
+    <script>
+        let box = document.querySelector('.box')
+        let input = document.getElementById('input')
+
+        // 1. mouse events
+        box.addEventListener('click', function () {
+            box.style.backgroundColor = "red"
+        })
+        box.addEventListener('mouseenter', function () {
+            box.style.backgroundColor = "green"
+        })
+        box.addEventListener('mouseleave', function () {
+            box.style.backgroundColor = "blue"
+        })
+        // single click -> click
+        // double click -> dblclick
+        // mouse enter -> mouseenter
+        // mouse leave -> mouseleave
+
+        // 2. keyboard events
+        // input.addEventListener('keydown' , function () {
+        //     box.style.backgroundColor = "red"
+        // })
+
+        // 3. form events
+        input.addEventListener('focus', function () {
+            input.style.borderRadius = "25px"
+        })
+        input.addEventListener('blur', function () {
+            input.style.borderRadius = "0px"
+        })
+        input.addEventListener('submit', function (e) {
+            e.preventDefault()
+            alert("form submitted")
+        })
+        
+    </script>
+</body>
+
+</html>
